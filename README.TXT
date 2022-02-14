@@ -1,12 +1,10 @@
 ------------------------------------------------------------------------
-This is the project README file. Here, you should describe your project.
-Tell the reader (someone who does not know anything about this project)
-all he/she needs to know. The comments should usually include at least:
+Rock paper scisssors game for Open University module M250
 ------------------------------------------------------------------------
 
-PROJECT TITLE:
-PURPOSE OF PROJECT:
-VERSION or DATE:
+PROJECT TITLE: Rock Paper Scissors
+PURPOSE OF PROJECT: Game of rock paper scissors
+VERSION or DATE:V1
 HOW TO START THIS PROJECT:
-AUTHORS:
+AUTHORS: Jake Chambers
 USER INSTRUCTIONS:
