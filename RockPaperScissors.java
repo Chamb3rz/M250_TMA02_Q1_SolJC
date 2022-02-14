@@ -23,12 +23,12 @@ public class RockPaperScissors
      * Q1c.
      */
     public RockPaperScissors() 
-    {
+   {
         // Initialise instance variables
         reader = new InputReader();
         yourScore = 0;
         computerScore = 0;
-        ran = new Random(3);
+        ran = new Random(1);
     }
 
     /*
@@ -36,10 +36,10 @@ public class RockPaperScissors
      * Q1d.
      */
     public void printPrompt() 
-    {
+   {
         System.out.println();
         System.out.println();
-        System.out.print("Enter your choice, paper, rock or scissors > ");
+        System.out.print("Enter your choice, paper, rock or scissors > " );
     }
 
      /*
@@ -47,7 +47,7 @@ public class RockPaperScissors
      * Q1e.
      */
     public String userChoice() 
-    {
+   {
         return reader.getInput().trim().toLowerCase();
     }
 
@@ -57,9 +57,9 @@ public class RockPaperScissors
     * Q1f.
     */ 
     public String computerChoice()
-    {
-        int randomNumber = ran.nextInt();
-        String computersMove;
+   {
+        int randomNumber = ran.nextInt(4);
+        String computersMove = "";
 
         //set the computers move to the corresponding choice depending on the number
         switch (randomNumber)
@@ -76,15 +76,13 @@ public class RockPaperScissors
     }
 
      /*
-     * Get the users choice, trim any spaces and make the string lower case
+     * Determine a the winner of the round by comparing string values 
+     * Increment the winners score 
+     * Return the winner as a string
      * Q1g.
      */
     public String findWinner(String yourChoice, String computerChoice) 
-    {
-
-        yourChoice = userChoice();
-        computerChoice = computerChoice();
-        
+   {        
         // If the user input is not valid the computer wins
         if (!yourChoice.equals("rock") && 
             !yourChoice.equals("paper") && 
@@ -94,6 +92,77 @@ public class RockPaperScissors
             return "computer";
         }
 
+        // If both both players give the same choice its a draw
+        if (yourChoice.equals(computerChoice)) {
+            return "draw";
+        } 
+
+        // If input is valid and the game is not a draw use nested if loops
+        // to determine a winner and increment score
+
+        // If user chooses rock ...
+        if (yourChoice.equals("rock")) {
+            if (computerChoice.equals("scissors")) {
+                yourScore++;
+                return "you";
+            } else if (computerChoice.equals("paper")) {
+                computerScore++;
+                return "computer";
+            }
+        // If user chooses paper...
+        } else if (yourChoice.equals("paper")) {
+            if (computerChoice.equals("rock")) {
+                yourScore++;
+                return "you";
+            } else if (computerChoice.equals("scissors")) {
+                computerScore++;
+                return "computer";
+            }
+        // If user chooses scissors...
+        } else if (yourChoice.equals("scissors")) {
+            if (computerChoice.equals("paper")) {
+                yourScore++;
+                return "you";
+            } else if (computerChoice.equals("rock")) {
+                computerScore++;
+                return "computer";
+            }
+        }
         return "";
     }
+    
+    /**
+     * Start the game of rock, paper, scissors. 
+     * Collect inputs and generate computers move.
+     * Print out winner to console
+     * Q1h.
+     */
+     public void playRound() 
+     {
+        // promt the user for an input 
+        printPrompt();
+
+        // Store user input in the yourChoice variable and initialize the computers choice in the compChoice var
+        String yourChoice = userChoice();
+        String compChoice = computerChoice();
+
+        //Print the users choice and the comp choice to the terminal
+        System.out.println("\n" + "You have chosen " + yourChoice + " and the computer has chosen " + compChoice);
+
+        //Find the winner of the round and increment the scores
+        //Print the winner to the console
+        String winner = findWinner(yourChoice, compChoice);
+        String winningString = "";
+
+        switch (winner) {
+            case "you": winningString = "You are the winner";
+                 break;
+            case "computer": winningString = "The computer is the winner";
+                break;
+            case "draw": winningString = "This game is a draw";
+                break;
+        }
+        System.out.println(winningString);
+        System.out.println("You have " + yourScore + " and the computer has " + computerScore);
+     }
 }

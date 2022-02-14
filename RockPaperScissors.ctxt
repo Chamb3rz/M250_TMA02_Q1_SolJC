@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=RockPaperScissors
+comment0.text=\r\n\ The\ rock\ paper\ sciccors\ class\ leverages\ user\ input\ in\ the\ terminal\ to\ play\ a\ game\r\n\ of\ rock\ paper\ scissors.\r\n\r\n\ @author\ Jake\ Chambers\ K5467717\r\n\ @version\ V1.0\ 07/02/2022\r\n\ Q1a\r\n
+comment1.params=
+comment1.target=RockPaperScissors()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ RockPaperScissors\r\n\ Q1c.\r\n
+comment2.params=
+comment2.target=void\ printPrompt()
+comment2.text=\r\n\ Print\ 2\ blank\ lines\ to\ the\ console\ and\ then\ prompt\ the\ user\ for\ an\ input\r\n\ Q1d.\r\n
+comment3.params=
+comment3.target=java.lang.String\ userChoice()
+comment3.text=\r\n\ Get\ the\ users\ choice,\ trim\ any\ spaces\ and\ make\ the\ string\ lower\ case\r\n\ Q1e.\r\n
+comment4.params=
+comment4.target=java.lang.String\ computerChoice()
+comment4.text=\r\n\ generate\ a\ random\ numer\ between\ 0\ and\ 2\ inclusive,\ use\ the\ number\ to\ return\ a\r\n\ corresponding\ string\ value\ (rock,\ paper,\ scissors)\r\n\ Q1f.\r\n
+comment5.params=yourChoice\ computerChoice
+comment5.target=java.lang.String\ findWinner(java.lang.String,\ java.lang.String)
+comment5.text=\r\n\ Determine\ a\ the\ winner\ of\ the\ round\ by\ comparing\ string\ values\ \r\n\ Increment\ the\ winners\ score\ \r\n\ Return\ the\ winner\ as\ a\ string\r\n\ Q1g.\r\n
+comment6.params=
+comment6.target=void\ playRound()
+comment6.text=\r\n\ Start\ the\ game\ of\ rock,\ paper,\ scissors.\ \r\n\ Collect\ inputs\ and\ generate\ computers\ move.\r\n\ Print\ out\ winner\ to\ console\r\n\ Q1h.\r\n
+numComments=7
